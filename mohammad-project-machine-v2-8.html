@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>محمد اسحاق صیادی | طراحی سایت و اجرای پروژه‌های وب</title>
+  <meta
+    name="description"
+    content="محمد اسحاق صیادی | طراحی سایت، لندینگ‌پیج و اجرای پروژه‌های وب"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --primary: #5b21b6;
+      --primary-dark: #3b0764;
+      --primary-soft: #ede9fe;
+      --text: #111111;
+      --muted: #444444;
+      --bg: #fcfcff;
+      --surface: #ffffff;
+      --surface-2: #f5f3ff;
+      --accent: #b8860b;
+      --accent-soft: #fff4cc;
+      --border: rgba(91, 33, 182, 0.12);
+      --shadow: 0 18px 45px rgba(91, 33, 182, 0.14);
+      --shadow-lg: 0 24px 60px rgba(17, 17, 17, 0.12);
+      --radius: 24px;
+      --container: 1120px;
+      --header-height: 78px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(91, 33, 182, 0.12), transparent 28%),
+        radial-gradient(circle at bottom left, rgba(184, 134, 11, 0.14), transparent 24%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.9;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      margin-bottom: 10px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .highlight {
+      color: var(--primary);
+    }
+
+    .gold {
+      color: var(--accent);
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(91, 33, 182, 0.1);
+    }
+
+    .nav {
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      display: grid;
+      place-items: center;
+      box-shadow: var(--shadow);
+      font-weight: 800;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      padding: 10px 14px;
+      border-radius: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      transition: 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--primary-soft);
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 14px;
+      background: var(--surface);
+      box-shadow: 0 8px 24px rgba(17, 17, 17, 0.08);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
+      content: "";
+      position: absolute;
+      right: 12px;
+      width: 24px;
+      height: 2.5px;
+      background: var(--text);
+      border-radius: 999px;
+      transition: 0.25s ease;
+    }
+
+    .menu-toggle span {
+      top: 23px;
+    }
+
+    .menu-toggle::before {
+      top: 16px;
+    }
+
+    .menu-toggle::after {
+      top: 30px;
+    }
+
+    .menu-toggle.active span {
+      opacity: 0;
+    }
+
+    .menu-toggle.active::before {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle.active::after {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+      padding: 54px 0 48px;
+      min-height: calc(100vh - var(--header-height));
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .hero-content {
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(91, 33, 182, 0.1);
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content::before {
+      content: "";
+      position: absolute;
+      inset: auto auto -80px -80px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(184, 134, 11, 0.22), transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 5vw, 4.2rem);
+      line-height: 1.3;
+      margin-bottom: 14px;
+      font-weight: 900;
+      color: var(--text);
+    }
+
+    .hero-text {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 640px;
+      margin-bottom: 24px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 16px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: var(--text);
+      border-color: rgba(17, 17, 17, 0.08);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-points span {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--surface-2);
+      color: var(--primary);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .hero-card-side {
+      display: grid;
+      gap: 16px;
+    }
+
+    .floating-card {
+      background: linear-gradient(180deg, #ffffff, #f8f5ff);
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+    }
+
+    .floating-card.primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+    }
+
+    .floating-card.primary p,
+    .floating-card.primary li {
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .floating-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .floating-card ul {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .floating-card li {
+      position: relative;
+      padding-right: 18px;
+      color: var(--muted);
+    }
+
+    .floating-card li::before {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 12px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .skills-box {
+      background: var(--surface);
+      border-radius: 30px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border);
+      padding: 28px;
+    }
+
+    .skills-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    .skill-tag {
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffffff, #f5f0ff);
+      border: 1px solid rgba(91, 33, 182, 0.12);
+      color: var(--text);
+      font-weight: 700;
+      box-shadow: 0 12px 26px rgba(91, 33, 182, 0.08);
+    }
+
+    .skill-tag.important {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-color: rgba(184, 134, 11, 0.18);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      background: var(--surface);
+      border-radius: 28px;
+      padding: 26px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .quote-mark {
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--primary);
+      opacity: 0.16;
+      margin-bottom: 8px;
+      font-weight: 900;
+    }
+
+    .testimonial-text {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 0.98rem;
+    }
+
+    .testimonial-user strong {
+      display: block;
+      font-size: 1.02rem;
+      color: var(--text);
+    }
+
+    .testimonial-user span {
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, rgba(91, 33, 182, 0.07), rgba(184, 134, 11, 0.1));
+      border: 1px solid rgba(91, 33, 182, 0.12);
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: var(--shadow-lg);
+      text-align: center;
+    }
+
+    .contact-box h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      color: var(--muted);
+    }
+
+    .contact-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #c89212, #8a6508);
+      color: #ffffff;
+      box-shadow: 0 14px 36px rgba(184, 134, 11, 0.24);
+    }
+
+    .footer {
+      background: #12051f;
+      color: #f5f5f5;
+      padding: 40px 0 28px;
+      margin-top: 26px;
+    }
+
+    .footer-wrap {
+      display: grid;
+      gap: 18px;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.86);
+      padding: 10px 14px;
+      border-radius: 12px;
+      transition: 0.25s ease;
+    }
+
+    .footer-links a:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+
+    .footer-note {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.95rem;
+    }
+
+    .scroll-top {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      width: 52px;
+      height: 52px;
+      border: none;
+      border-radius: 18px;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: #ffffff;
+      font-size: 1.2rem;
+      box-shadow: var(--shadow);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(14px);
+      transition: 0.25s ease;
+      z-index: 1000;
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: .25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .service-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 8px;
+      font-size: 1.15rem;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 14px;
+    }
+
+    .service-card ul {
+      list-style: none;
+      display: grid;
+      gap: 7px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .service-card li::before {
+      content: "✓";
+      color: var(--accent);
+      font-weight: 900;
+      margin-left: 7px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--primary);
+      color: white;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .faq details {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 17px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .faq summary {
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .faq p {
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    .contact-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
+    @media (max-width: 991px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .services-grid, .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 991px) {
+      .hero-grid,
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .menu-toggle {
+        display: inline-block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(var(--header-height) - 2px);
+        right: 4%;
+        left: 4%;
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid rgba(91, 33, 182, 0.1);
+        border-radius: 22px;
+        box-shadow: var(--shadow-lg);
+        padding: 12px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        text-align: center;
+      }
+
+      .hero-content,
+      .contact-box,
+      .skills-box,
+      .floating-card,
+      .testimonial-card {
+        padding: 22px;
+      }
+
+      .hero-title {
+        font-size: 2.35rem;
+      }
+
+      .hero-text {
+        font-size: 0.98rem;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .contact-actions .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="brand">
+        <span class="brand-mark">MS</span>
+        <span>محمد اسحاق صیادی</span>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="active">خانه</a>
+        <a href="#services">خدمات</a>
+        <a href="#skills">تخصص‌ها</a>
+        <a href="#portfolio">نمونه‌کارها</a>
+        <a href="#faq">سؤالات متداول</a>
+        <a href="#contact">ارتباط با من</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="باز کردن منو">
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">طراحی حرفه ای سایت و اجرای سریع پروژه ها</span>
+          <h1 class="hero-title">
+            <span class="highlight">برنامه نویسی</span> عشق منه
+          </h1>
+          <p class="hero-text">
+            برای کسب‌وکارتان سایت، لندینگ‌پیج یا محتوای فروش می‌خواهید؟
+            پروژه‌تان را توضیح دهید تا مناسب‌ترین راه‌حل را پیشنهاد بدهم.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#project-form" class="btn btn-primary">ثبت درخواست پروژه</a>
+            <a href="#contact" class="btn btn-outline">مشاهده راه های ارتباطی</a>
+          </div>
+
+          <div style="margin-bottom:18px;"><a href="#portfolio" class="btn btn-outline">مشاهده نمونه‌کارها</a></div>
+
+          <div class="hero-points">
+            <span>طراحی مدرن</span>
+            <span>سرعت بالا</span>
+            <span>مناسب موبایل</span>
+            <span>پشتیبانی حرفه ای</span>
+          </div>
+        </div>
+
+        <div class="hero-card-side">
+          <div class="floating-card primary">
+            <h3>چرا همکاری با من؟</h3>
+            <p>
+              تمرکز من روی ساخت وبسایت هایی است که هم زیبا باشند و هم برای رشد
+              واقعی کسب و کار شما نتیجه بسازند.
+            </p>
+            <ul>
+              <li>تحویل سریع و دقیق پروژه</li>
+              <li>طراحی حرفه ای و کاربرپسند</li>
+              <li>ساخت صفحات ریسپانسیو برای همه دستگاه ها</li>
+            </ul>
+          </div>
+
+          <div class="floating-card">
+            <h3>تمرکز اصلی من</h3>
+            <ul>
+              <li>طراحی سایت شخصی و شرکتی</li>
+              <li>پیاده سازی فروشگاه اینترنتی</li>
+              <li>بهینه سازی ظاهر و تجربه کاربری</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge">خدمات من</span>
+          <h2>برای پروژه‌تان چه کاری می‌توانم انجام دهم؟</h2>
+          <p>خدمات اصلی من برای ساخت حضور حرفه‌ای آنلاین و کمک به فروش کسب‌وکارها.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">🌐</div>
+            <h3>طراحی سایت</h3>
+            <p>ساخت سایت مدرن، ریسپانسیو و متناسب با نیاز کسب‌وکار.</p>
+            <ul><li>سایت شخصی و شرکتی</li><li>فروشگاه اینترنتی</li><li>صفحات اختصاصی</li></ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🎯</div>
+            <h3>لندینگ‌پیج</h3>
+            <p>صفحه‌ای متمرکز برای معرفی محصول، خدمت یا کمپین و گرفتن اقدام از مخاطب.</p>
+            <ul><li>ساختار هدفمند</li><li>CTA واضح</li><li>مناسب موبایل</li></ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">✍️</div>
+            <h3>کمپین‌نویسی</h3>
+            <p>طراحی پیام و مسیر محتوایی برای ایجاد نیاز، اعتماد و حرکت مخاطب به سمت اقدام.</p>
+            <ul><li>ایده کمپین</li><li>هوک و CTA</li><li>ساختار محتوای فروش</li></ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🎨</div>
+            <h3>طراحی لوگو</h3>
+            <p>طراحی هویت بصری ساده و کاربردی برای استفاده در فضای آنلاین.</p>
+            <ul><li>ایده و کانسپت</li><li>نسخه مناسب شبکه‌های اجتماعی</li><li>فایل خروجی</li></ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>برنامه‌نویسی</h3>
+            <p>پیاده‌سازی قابلیت‌ها و صفحات وب متناسب با نیاز پروژه.</p>
+            <ul><li>Frontend</li><li>JavaScript</li><li>پیاده‌سازی رابط کاربری</li></ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3>بازطراحی و بهینه‌سازی سایت</h3>
+            <p>بهبود ظاهر، تجربه کاربری و ساختار صفحات موجود.</p>
+            <ul><li>بازطراحی UI</li><li>ریسپانسیو</li><li>تمرکز روی عملکرد</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-head">
+          <h2>تخصص های حرفه ای من</h2>
+          <p>
+            مهارت هایی که با آن ها پروژه های وب را با کیفیت بالا، ظاهر حرفه ای و
+            عملکرد مناسب اجرا می کنم
+          </p>
+        </div>
+
+        <div class="skills-box">
+          <div class="skills-tags">
+            <span class="skill-tag important">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag important">JavaScript</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">UI Design</span>
+            <span class="skill-tag important">Landing Page</span>
+            <span class="skill-tag">Ecommerce UI</span>
+            <span class="skill-tag">Website Redesign</span>
+            <span class="skill-tag important">Frontend Development</span>
+            <span class="skill-tag">Performance Focus</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge">فرآیند همکاری</span>
+          <h2>از درخواست تا تحویل</h2>
+          <p>مسیر همکاری را ساده نگه می‌داریم تا قبل از شروع، دقیقاً بدانید چه اتفاقی می‌افتد.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card"><div class="step-number">۱</div><h3>ارسال درخواست</h3><p>نوع پروژه، بودجه و نیازتان را ارسال می‌کنید.</p></article>
+          <article class="step-card"><div class="step-number">۲</div><h3>بررسی پروژه</h3><p>نیازها و راه‌حل مناسب برای پروژه بررسی می‌شود.</p></article>
+          <article class="step-card"><div class="step-number">۳</div><h3>توافق</h3><p>محدوده کار، زمان و هزینه قبل از شروع مشخص می‌شود.</p></article>
+          <article class="step-card"><div class="step-number">۴</div><h3>اجرا و تحویل</h3><p>پروژه اجرا و پس از بررسی نهایی تحویل می‌شود.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge">نمونه‌کارهای واقعی من</span>
+          <h2>چیزهایی که خودم ساخته‌ام</h2>
+          <p>به‌جای ادعای پروژه‌های فرضی، نمونه‌کارهای واقعی و قابل مشاهده را ببینید.</p>
+        </div>
+        <div class="testimonials-grid">
+          <article class="testimonial-card">
+            <div class="quote-mark">01</div>
+            <h3>سایت معرفی شخصی</h3>
+            <p class="testimonial-text">وب‌سایت شخصی برای معرفی مهارت‌ها، خدمات و دریافت درخواست پروژه.</p>
+            <a class="btn btn-outline" href="#contact">درخواست ساخت سایت مشابه</a>
+          </article>
+          <article class="testimonial-card">
+            <div class="quote-mark">02</div>
+            <h3>سایت فروش دوره</h3>
+            <p class="testimonial-text">سایت فروش دوره با مسیر دریافت دوره رایگان و مأموریت‌های آموزشی.</p>
+            <a class="btn btn-outline" href="https://sayadiissak-arch.github.io/course-site/" target="_blank" rel="noopener">مشاهده دمو</a>
+          </article>
+          <article class="testimonial-card">
+            <div class="quote-mark">03</div>
+            <h3>پروژه شما</h3>
+            <p class="testimonial-text">اگر ایده یا پروژه‌ای دارید، توضیحاتش را بفرستید تا درباره راه‌حل مناسب صحبت کنیم.</p>
+            <a class="btn btn-primary" href="#project-form">ثبت درخواست پروژه</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="project-form">
+      <div class="container">
+        <div class="contact-box">
+          <span class="badge">شروع همکاری</span>
+          <h2>پروژه‌تان را در ۶۰ ثانیه توضیح دهید 🚀</h2>
+          <p>فرم را پر کنید؛ سپس متن آماده درخواست پروژه برای ارسال پیام به شماره من ساخته می‌شود.</p>
+          <form id="projectRequestForm" style="display:grid;gap:14px;max-width:760px;margin:24px auto 0;text-align:right;">
+            <input required name="name" placeholder="نام شما" style="padding:15px;border:1px solid rgba(91,33,182,.15);border-radius:14px;font-family:inherit;">
+            <input required name="service" placeholder="خدمت موردنیاز (مثلاً طراحی سایت)" style="padding:15px;border:1px solid rgba(91,33,182,.15);border-radius:14px;font-family:inherit;">
+            <input name="budget" placeholder="بودجه تقریبی (اختیاری)" style="padding:15px;border:1px solid rgba(91,33,182,.15);border-radius:14px;font-family:inherit;">
+            <textarea required name="details" rows="5" placeholder="توضیح کوتاه پروژه و چیزی که می‌خواهید ساخته شود" style="padding:15px;border:1px solid rgba(91,33,182,.15);border-radius:14px;font-family:inherit;resize:vertical;"></textarea>
+            <button class="btn btn-primary" type="submit">ارسال درخواست پروژه</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <span class="badge">سؤالات متداول</span>
+          <h2>قبل از ثبت پروژه</h2>
+        </div>
+        <div class="faq">
+          <details><summary>چطور پروژه را ثبت کنم؟</summary><p>فرم درخواست پروژه را پر کنید یا برای شماره پیام‌رسانی من پیام بفرستید.</p></details>
+          <details><summary>هزینه پروژه چقدر است؟</summary><p>قیمت به نوع پروژه، امکانات و حجم کار بستگی دارد و بعد از بررسی نیازها اعلام می‌شود.</p></details>
+          <details><summary>آیا پروژه‌های اختصاصی هم انجام می‌دهید؟</summary><p>بله، می‌توانید نیاز دقیق پروژه را در فرم توضیح دهید تا امکان اجرا بررسی شود.</p></details>
+          <details><summary>آیا سایت‌ها برای موبایل هم مناسب هستند؟</summary><p>بله، طراحی ریسپانسیو برای نمایش مناسب در موبایل و دسکتاپ در نظر گرفته می‌شود.</p></details>
+          <details><summary>تماس تلفنی پاسخ داده می‌شود؟</summary><p>خیر؛ برای ارتباط، لطفاً فقط پیام ارسال کنید.</p></details>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <span class="badge">ارتباط برای پروژه</span>
+          <h2>پروژه‌تان را شروع کنیم؟ 🚀</h2>
+          <p>من فقط از طریق پیام پاسخ‌گو هستم. برای شروع، روی دکمه زیر بزنید و پیام پروژه را ارسال کنید.</p>
+          <div class="contact-actions">
+            <a href="sms:09229131635?body=سلام، برای ثبت پروژه پیام می‌دهم.%0Aخدمت موردنیاز:%0Aبودجه تقریبی:%0Aتوضیحات پروژه:" class="btn btn-primary">📩 ارسال پیام به ۰۹۲۲۹۱۳۱۶۳۵</a>
+            <a href="#project-form" class="btn btn-gold">ثبت درخواست از طریق فرم</a>
+          </div>
+          <p class="contact-note">📱 پاسخ‌گویی: فقط پیام — تماس تلفنی پاسخ داده نمی‌شود.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <div class="footer-links">
+        <a href="#home">خانه</a>
+        <a href="#services">خدمات</a>
+        <a href="#skills">تخصص‌ها</a>
+        <a href="#portfolio">نمونه‌کارها</a>
+        <a href="#faq">سؤالات متداول</a>
+        <a href="#contact">ارتباط با من</a>
+      </div>
+      <p class="footer-note">
+        این سایت توسط محمد اسحاق صیادی ساخته شده در سال ۲۰۲۶
+      </p>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="بازگشت به بالا">↑</button>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+    const scrollTopBtn = document.getElementById("scrollTop");
+    const links = document.querySelectorAll(".nav-links a, .footer-links a");
+    const sections = document.querySelectorAll("main section");
+
+    menuToggle.addEventListener("click", function () {
+      menuToggle.classList.toggle("active");
+      navLinks.classList.toggle("open");
+    });
+
+    links.forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.classList.remove("active");
+      });
+    });
+
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
+
+      let currentId = "home";
+
+      sections.forEach(function (section) {
+        const top = section.offsetTop - 140;
+        if (window.scrollY >= top) {
+          currentId = section.id;
+        }
+      });
+
+      document.querySelectorAll(".nav-links a").forEach(function (item) {
+        item.classList.remove("active");
+        if (item.getAttribute("href") === "#" + currentId) {
+          item.classList.add("active");
+        }
+      });
+    });
+
+
+    const projectForm = document.getElementById("projectRequestForm");
+    if (projectForm) {
+      projectForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        const data = new FormData(projectForm);
+        const subject = encodeURIComponent("درخواست پروژه - " + data.get("service"));
+        const body = encodeURIComponent(
+          "درخواست پروژه\n\nنام: " + data.get("name") + "\n" +
+          "خدمت: " + data.get("service") + "\n" +
+          "بودجه: " + (data.get("budget") || "اعلام نشده") + "\n\n" +
+          "توضیحات پروژه:\n" + data.get("details")
+        );
+        window.location.href =
+          "sms:09229131635?body=" + body;
+      });
+    }
+
+    scrollTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  </script>
+</body>
+</html>
